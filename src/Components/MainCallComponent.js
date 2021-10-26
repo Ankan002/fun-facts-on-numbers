@@ -24,7 +24,7 @@ const MainCallComponent = () => {
       params: {fragment: 'true', json: 'true'},
       headers: {
         'x-rapidapi-host': 'numbersapi.p.rapidapi.com',
-        'x-rapidapi-key': environment
+        'x-rapidapi-key': process.env.REACT_APP_API_KEY
       }
     };
 
