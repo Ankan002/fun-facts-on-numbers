@@ -18,8 +18,6 @@ const MainCallComponent = () => {
 
     const environment = process.env.REACT_APP_API_KEY
 
-    console.log(environment)
-
     const options = {
       method: 'GET',
       url: `https://numbersapi.p.rapidapi.com/${userNum}/math`,
@@ -32,7 +30,6 @@ const MainCallComponent = () => {
 
 
     axios.request(options).then(function (response) {
-      console.log(response.data.text);
       setFact(response.data.text)
       setIsLoading(false);
     }).catch(function (error) {
