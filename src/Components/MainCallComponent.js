@@ -11,7 +11,14 @@ const MainCallComponent = () => {
   const [searchNum, setSearchNum] = useState("");
 
   const getFact = async (userNum) => {
+    if (isLoading){
+      return
+    }
     setIsLoading(true);
+
+    const environment = process.env.REACT_APP_API_KEY
+
+    console.log(environment)
 
     const options = {
       method: 'GET',
@@ -19,7 +26,7 @@ const MainCallComponent = () => {
       params: {fragment: 'true', json: 'true'},
       headers: {
         'x-rapidapi-host': 'numbersapi.p.rapidapi.com',
-        'x-rapidapi-key': '34e1fd9fbdmshbbbcffb1841e6b0p1a1af2jsndc638d4bba0b'
+        'x-rapidapi-key': environment
       }
     };
 
